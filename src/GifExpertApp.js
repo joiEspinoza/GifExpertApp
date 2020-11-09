@@ -7,6 +7,7 @@ import GifGrid from './components/GifGrid';
 
 const GifExpertApp = ({saludo}) => 
 {
+    
     const [categories, setCategories] = useState(["html"]);
 
     return(
