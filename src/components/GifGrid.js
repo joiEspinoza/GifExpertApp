@@ -1,37 +1,37 @@
 import React from 'react'
-//import React, { useState,useEffect } from 'react'
-import PropTypes from 'prop-types'
 import GifGridItem from './GifGridItem';
 import "../../src/index.css";
 import { useFechHook } from '../hooks/useFechHook';
 
-const GifGrid = ({category}) =>
+////////////////////
+
+const GifGrid = ( { category } ) =>
  {
 
-    const { data:images,loading } = useFechHook(category);
+    const { data:images, loading } = useFechHook( category );
+
+/********************************************************************************************* */
 
     return (
        
         <>
 
-            <h3>{category}</h3>
+            <h3 style={ { color : "white" } }>{ "# "+category.toUpperCase() }</h3>
 
-            {loading && <p>Cargando...</p>}
+            { loading && <p style={ { color : "white" } }>Cargando...</p> }
 
             <div className="cardGrid">
             
-                { images.map( (img)=><GifGridItem key={img.id} {...img} /> ) }
+                { images.map( ( img ) => <GifGridItem key={ img.id } { ...img } /> ) }
                 
             </div>
 
+            <hr/>
+
         </>
-    )
-}
+    );
+};
 
+////////////////////////////
 
-GifGrid.propTypes = {
-
-}
-
-
-export default GifGrid
+export default GifGrid;

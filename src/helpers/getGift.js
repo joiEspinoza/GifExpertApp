@@ -1,12 +1,14 @@
 
 
-export const getGif = async(category) =>
+export const getGif = async( category ) =>
 {
-   const url = `https://api.giphy.com/v1/gifs/search?q=${ encodeURI(category) }&limit=10&api_key=3GlnadtHZyuefwy3SWy2IsuOIiHUozp2`;
-   const resp = await fetch(url);
+    
+   const url = `https://api.giphy.com/v1/gifs/search?q=${ encodeURI( category ) }&limit=10&api_key=3GlnadtHZyuefwy3SWy2IsuOIiHUozp2`;
+   const resp = await fetch( url );
    const { data } = await resp.json();
 
-   const gift = data.map((element)=>{
+   const gift = data.map( ( element ) =>
+   {
 
        return{
 
@@ -16,7 +18,8 @@ export const getGif = async(category) =>
 
        }
 
-   })
+   });
 
    return gift;
-}
+
+};
